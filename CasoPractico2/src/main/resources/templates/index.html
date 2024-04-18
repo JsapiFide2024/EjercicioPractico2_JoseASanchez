@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Información de Hoteles</title>        
+</head>
+<body style="color: white;">
+    <header th:replace="~{layout/plantilla :: header}"/>
+    
+    <div>
+        <h2>Información de Hoteles</h2>
+
+        <div>
+            <h3>Hotel Conchal</h3>
+            <p>Ubicación: Playa Conchal, Guanacaste</p>
+            <p>Descripción: Un hermoso hotel ubicado en la playa Conchal. El Hotel Conchal es conocido por su ambiente relajado y su excelente servicio al cliente. Sus instalaciones incluyen piscinas, restaurantes de alta cocina y actividades recreativas para toda la familia. Con habitaciones espaciosas y vistas impresionantes al océano, este hotel ofrece una experiencia inolvidable para los huéspedes que buscan relajarse y disfrutar de la belleza natural de Costa Rica.</p>
+        </div>
+
+        <div>
+            <h3>Hotel Avellanas</h3>
+            <p>Ubicación: Playa Avellanas, Guanacaste</p>
+            <p>Descripción: Un acogedor hotel ubicado en la playa Avellanas. El Hotel Avellanas es perfecto para aquellos que buscan una escapada tranquila en contacto con la naturaleza. Con cabañas rústicas rodeadas de exuberante vegetación y a pocos pasos de la playa, este hotel ofrece una experiencia única para los amantes de la naturaleza y el surf. Los huéspedes pueden disfrutar de clases de surf, caminatas por la selva y deliciosa comida local en el restaurante del hotel.</p>
+        </div>
+
+        <div>
+            <h3>Hotel Gregorio</h3>
+            <p>Ubicación: Playa Gregorio, Guanacaste</p>
+            <p>Descripción: Un exclusivo hotel ubicado en la playa Gregorio. El Hotel Gregorio es sinónimo de lujo y elegancia en un entorno tropical. Con suites amplias y elegantes, piscinas privadas y servicio de mayordomo personalizado, este hotel ofrece una experiencia de hospedaje incomparable. Los huéspedes pueden disfrutar de tratamientos de spa de primer nivel, cenas románticas en la playa y excursiones privadas a lugares pintorescos cercanos. Desde el momento en que llegan, los visitantes son recibidos con la atención y el cuidado excepcionales que caracterizan al Hotel Gregorio.</p>
+        </div>
+    </div>
+
+    <section th:replace="~{layout/plantilla :: main-page}"/>
+
+    <footer th:replace="~{layout/plantilla :: footer}"/>          
+</body>
+</html>

@@ -36,19 +36,17 @@ public class ReservaController {
 
     @PostMapping("/guardar")
     public String reservaGuardar(Reserva reserva) { 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        reserva.setIdUsuario(authentication.getName());
         reservaService.save(reserva);
         return "redirect:/mensaje";
     }
 
-    @GetMapping("/eliminar/{idReserva}")
+    @GetMapping("/eliminar/{id}")
     public String reservaEliminar(Reserva reserva) {
         reservaService.delete(reserva);
         return "redirect:/reserva/listado";
     }
 
-    @GetMapping("/modificar/{idReserva}")
+    @GetMapping("/modificar/{id}")
     public String reservaModificar(Reserva reserva, Model model) {
         reserva = reservaService.getReserva(reserva);
         model.addAttribute("reserva", reserva);

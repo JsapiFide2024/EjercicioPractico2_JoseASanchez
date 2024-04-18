@@ -38,21 +38,39 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="mb-3">
-                                                    <label for="cuarto">Tipo de habitación</label>
+                                                    <label for="nombre">Nombre</label>
                                                     <input type="text" class="form-control" 
-                                                           name="cuarto" th:field="*{cuarto}"
+                                                           name="nombre" 
+                                                           required="true">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="huespedes">Numero de huespedes</label>
+                                                    <input type="text" class="form-control" 
+                                                           name="huespedes" 
                                                            required="true">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="inicio">Fecha de Entrada</label>
                                                     <input type="date" class="form-control" 
-                                                           name="inicio" th:field="*{inicio}"
+                                                           name="inicio" 
                                                            required="true">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="fin">Fecha de Salida</label>
                                                     <input type="date" class="form-control" 
-                                                           name="fin" th:field="*{fin}"
+                                                           name="fin" 
+                                                           required="true">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="hotel">Hotel</label>
+                                                    <input type="text" class="form-control" 
+                                                           name="hotel" 
+                                                           required="true">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="cedula">Cedula</label>
+                                                    <input type="text" class="form-control" 
+                                                           name="cedula" 
                                                            required="true">
                                                 </div>
                                                 <div class="modal-footer">
@@ -84,28 +102,32 @@
                                     <thead class="table-dark">
                                         <tr>
                                             <th class="text-center">ID Reserva</th>
-                                            <th class="text-center">ID Usuario</th>
-                                            <th class="text-center">Tipo de habitación</th>
+                                            <th class="text-center">Cliente</th>
+                                            <th class="text-center">Numero de huespedes</th>
                                             <th class="text-center">Fecha de entrada</th>
                                             <th class="text-center">Fecha de salida</th>
+                                            <th class="text-center">Hotel</th>
+                                            <th class="text-center">Numero de cedula</th>
                                             <th></th><th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr th:each="reserva, contador : ${reservas}">
-                                            <td class="fs-6" th:text="${reserva.idReserva}"></td>
-                                            <td class="fs-6" th:text="${reserva.idUsuario}"></td>
-                                            <td class="fs-6" th:text="${reserva.cuarto}"></td>
+                                            <td class="fs-6" th:text="${reserva.id}"></td>
+                                            <td class="fs-6" th:text="${reserva.nombre}"></td>
+                                            <td class="fs-6" th:text="${reserva.huespedes}"></td>
                                             <td class="fs-6" th:text="${reserva.inicio}"></td>
                                             <td class="fs-6" th:text="${reserva.fin}"></td>
+                                            <td class="fs-6" th:text="${reserva.hotel}"></td>
+                                            <td class="fs-6" th:text="${reserva.cedula}"></td>
                                             <td>
-                                                <a th:href="@{/reserva/eliminar/}+${reserva.idReserva}"
+                                                <a th:href="@{/reserva/eliminar/}+${reserva.id}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> Eliminar
                                                 </a>
                                             </td>
                                             <td>
-                                                <a th:href="@{/reserva/modificar/}+${reserva.idReserva}"
+                                                <a th:href="@{/reserva/modificar/}+${reserva.id}"
                                                    class="btn btn-success">
                                                     <i class="fas fa-pencil"></i> Actualizar
                                                 </a>
@@ -136,7 +158,7 @@
                           th:object="${reserva}"
                           class="was-validated"                          
                           enctype="multipart/form-data">
-                        <input type="hidden" name="idReserva" th:field="*{idReserva}"/>
+                        <input type="hidden" name="id" th:field="*{id}"/>
                         <section th:replace="~{reserva/fragmentos :: botonesEditarReserva}"/>
                         <div id=details>
                             <div class="container">
@@ -148,15 +170,15 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="mb-3">
-                                                    <label for="idUsuario">ID Usuario</label>
+                                                    <label for="nombre">Nombre</label>
                                                     <input type="text" class="form-control" 
-                                                           name="idUsuario" th:field="*{idUsuario}"
+                                                           name="nombre" th:field="*{nombre}"
                                                            required="true">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="cuarto">Tipo de habitación</label>
+                                                    <label for="huespedes">Numero de huespedes</label>
                                                     <input type="text" class="form-control" 
-                                                           name="cuarto" th:field="*{cuarto}"
+                                                           name="huespedes" th:field="*{huespedes}"
                                                            required="true">
                                                 </div>
                                                 <div class="mb-3">
@@ -169,6 +191,18 @@
                                                     <label for="fin">Fecha de Salida</label>
                                                     <input type="date" class="form-control" 
                                                            name="fin" th:field="*{fin}"
+                                                           required="true">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="hotel">Hotel</label>
+                                                    <input type="text" class="form-control" 
+                                                           name="hotel" th:field="*{hotel}"
+                                                           required="true">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="cedula">Cedula</label>
+                                                    <input type="text" class="form-control" 
+                                                           name="cedula" th:field="*{cedula}"
                                                            required="true">
                                                 </div>
                                             </div>
@@ -192,7 +226,7 @@
                         </a>
                     </div>
                     <div class="col-md-4 d-grid">                                
-                        <a th:href="@{/reserva/eliminar/}+${reserva.idReserva}"
+                        <a th:href="@{/reserva/eliminar/}+${reserva.id}"
                            class="btn btn-danger">
                             <i class="fas fa-trash"></i> 
                         </a>
@@ -206,7 +240,7 @@
             </div>
         </section>
 
-        
-        
+
+
     </body>
 </html>

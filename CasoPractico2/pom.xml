@@ -11,7 +11,7 @@
     <artifactId>EjercicioPractico2</artifactId>
     <version>1</version>
     <name>EjercicioPractico2</name>
-    <description>CasoEstudio2</description>
+    <description>CasoPractico2</description>
     <properties>
         <java.version>17</java.version>
     </properties>
